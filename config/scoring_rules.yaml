@@ -1,0 +1,120 @@
+# FINAL PERFECT scoring_rules.yaml - Matches ALL your code exactly
+scoring:
+  # ✅ EXACT MATCH for scoring_engine.py - keyword_tiers structure
+  keyword_tiers:
+    CRITICAL:
+      api: 25
+      admin: 22
+      auth: 20
+      secure: 18
+      vpn: 25
+      ssh: 22
+      root: 25
+      internal: 20
+    HIGH:
+      app: 15
+      portal: 15
+      dashboard: 15
+      console: 15
+      manager: 15
+      control: 15
+      system: 15
+      config: 12
+    MEDIUM:
+      dev: 8
+      test: 8
+      staging: 8
+      uat: 8
+      demo: 6
+      backup: 8
+      old: 6
+      legacy: 6
+    LOW:
+      mail: 3
+      ftp: 3
+      cdn: 2
+      img: 2
+      static: 2
+      assets: 2
+      media: 2
+      cache: 2
+
+  # ✅ EXACT MATCH for scoring_engine.py - status_scoring variables
+  status_scoring:
+    alive: 30
+    status_200: 25
+    status_302: 20
+    status_401: 15
+    status_403: 12
+    status_500: 8
+    js_present: 20
+    unique_ip: 10
+    ssl_valid: 15
+
+  # ✅ EXACT MATCH for scoring_engine.py - cloud_services
+  cloud_services:
+    s3: 15
+    azure: 15
+    gcp: 15
+    cloudfront: 12
+    aws: 12
+    digitalocean: 10
+    heroku: 10
+    netlify: 8
+
+  # ✅ EXACT MATCH for scoring_engine.py - tech_stack
+  tech_stack:
+    jenkins: 20
+    grafana: 20
+    kibana: 20
+    phpmyadmin: 22
+    wordpress: 8
+    drupal: 6
+    joomla: 6
+    mongodb: 15
+    redis: 15
+    elasticsearch: 18
+    kafka: 15
+
+  # ✅ EXACT MATCH for scoring_engine.py - domain_characteristics
+  domain_characteristics:
+    short_bonus: 10
+    max_length: 50
+    length_penalty: 1
+    numeric_penalty: 5
+    special_char_penalty: 8
+
+  # ✅ EXACT MATCH for scoring_engine.py - priority_thresholds
+  priority_thresholds:
+    CRITICAL: 80
+    HIGH: 50
+    MEDIUM: 25
+    LOW: 0
+
+# ✅ COMPATIBLE with directory_fuzzer.py adaptive strategies
+fuzzing_strategies:
+  FULL_AGGRESSIVE:
+    sample_size: 200
+    timeout: 30
+    description: "Full aggressive fuzzing"
+  COMPREHENSIVE:
+    sample_size: 100
+    timeout: 20
+    description: "Normal fuzzing" 
+  TARGETED:
+    sample_size: 50
+    timeout: 15
+    description: "Light fuzzing"
+  LIGHT_SCAN:
+    sample_size: 25
+    timeout: 10
+    description: "Quick validation"
+
+# ✅ COMPATIBLE with crawler.py and http_client.py settings
+performance:
+  max_concurrent_domains: 20
+  timeout_per_domain: 10
+  batch_size: 15
+  delay_between_batches: 0.2
+  max_retries: 2
+  retry_delay: 1

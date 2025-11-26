@@ -1,0 +1,9 @@
+httpx
+aiohttp
+beautifulsoup4
+pyjwt
+python-magic
+tqdm
+regex
+requests
+python-dateutil
