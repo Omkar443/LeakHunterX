@@ -183,7 +183,7 @@ class SubdomainFinder:
                 response_time=time.time() - start_time
             )
 
-        except subprocess.TimeoutError:
+        except subprocess.TimeoutExpired:  # FIXED: Changed from TimeoutError to TimeoutExpired
             return DiscoveryResult(
                 source="subfinder",
                 subdomains=[],
@@ -267,7 +267,7 @@ class SubdomainFinder:
         base_words = [
             # High priority
             'www', 'api', 'admin', 'auth', 'login', 'dashboard', 'secure',
-            # Medium priority  
+            # Medium priority
             'app', 'web', 'dev', 'test', 'staging', 'portal', 'mobile',
             # Common infrastructure
             'mail', 'blog', 'cdn', 'static', 'assets', 'media', 'img',
